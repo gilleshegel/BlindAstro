@@ -1,5 +1,14 @@
 ---
 
+const pageTitle = "关于我";
+const identity = {
+  firstName: "盲旅鼠",
+  character: "玉玉",
+  hobbies: ["哲学", "游戏", "动漫"],
+};
+
+const tired = true;
+
 ---
 
 <html lang="en">
@@ -9,14 +18,20 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">首页</a>
 		<a href="/about/">关于</a>
         <a href="/test/">测试</a>
-		<h1>BlindLemming's Astro about</h1>
-        <h1>我是Blind Lemming，这是我的个人博客！</h1>
-        <p>p到底有啥用<p>
+        <h1>{pageTitle}</h1>
+        <h2>这将是第二个网页？！</h2>
+        <p>惊人的事实：</p>
+        <ul>    
+            <li>我的名字是{identity.firstName}</li>
+            <li>我现在{identity.character}</li>
+            <li>我有若干爱好，譬如{identity.hobbies[0]}</li>
+            <li>我现在：{tired ? <p>几把的我累死了</p>: <p>我不累哈哈哈其实我真的很累</p> }</li>
+        </ul>
 	</body>
 </html>
