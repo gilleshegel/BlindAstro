@@ -7,6 +7,9 @@ const identity = {
   hobbies: ["哲学", "游戏", "动漫"],
 };
 
+const animegirls = ["宝多六花", "新条茜", "南梦芽", "貉"];
+const animecolor = "navy";
+
 const tired = true;
 
 ---
@@ -19,6 +22,16 @@ const tired = true;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{animecolor}}>
+        h1 {
+        color: purple;
+        font-size: 4rem;
+        }
+        .animegirl {
+            color: var(--animecolor);
+            font-weight: bold;
+        }
+        </style>
 	</head>
 	<body>
         <a href="/">首页</a>
@@ -32,6 +45,10 @@ const tired = true;
             <li>我现在{identity.character}</li>
             <li>我有若干爱好，譬如{identity.hobbies[0]}</li>
             <li>我现在：{tired ? <p>几把的我累死了</p>: <p>我不累哈哈哈其实我真的很累</p> }</li>
+        </ul>
+        <ul>
+            <li>我最近在看动漫，里面有如下角色</li>
+            <ul>{animegirls.map((animegirl) => <li class="animegirl">{animegirl}</li>)}</ul>
         </ul>
 	</body>
 </html>
