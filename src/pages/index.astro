@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Navigation from '../components/Navigation.astro';
 ---
 
 <html lang="en">
@@ -10,11 +13,11 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<Header/>
 	</head>
 	<body>
-		<a href="/">首页</a>
-		<a href="/about/">关于</a>
-		<a href="/test/">测试</a>
+	    <Navigation/>
 		<h1>BlindLemming's Astro mein gott</h1>
+		<Footer/>
 	</body>
 </html>

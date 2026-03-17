@@ -1,6 +1,8 @@
 ---
 
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 const pageTitle = "关于我";
 const identity = {
@@ -41,6 +43,7 @@ const tired = true;
         <a href="/test/">测试</a>
         <h1>{pageTitle}</h1>
         <h2>这将是第二个网页？！</h2>
+        <Header/>
         <p>惊人的事实：</p>
         <ul>    
             <li>我的名字是{identity.firstName}</li>
@@ -52,5 +55,6 @@ const tired = true;
             <li>我最近在看动漫，里面有如下角色</li>
             <ul>{animegirls.map((animegirl) => <li class="animegirl">{animegirl}</li>)}</ul>
         </ul>
+        <Footer/>
 	</body>
 </html>
