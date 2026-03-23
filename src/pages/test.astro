@@ -1,8 +1,9 @@
 ---
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+const allPosts = Object.values(import.meta.glob('./post/*.md', { eager: true }));
 const pageTitle = "首页";
+console.log(allPosts.length)
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -10,8 +11,7 @@ const pageTitle = "首页";
     <p>我是Blind Lemming，这是我的个人测试！</p>
     
     <ul>
-        <li><a href="/post/post-1">文章1</a></li>
-        <li><a href="/post/post-2">文章2</a></li>
+        {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
     </ul>
     
 </BaseLayout>

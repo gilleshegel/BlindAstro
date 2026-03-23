@@ -1,3 +1,11 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: '直接知识与逻辑中介 第二部分'
+pubDate: 2022-07-01
+description: '这是我 Astro 博客的第二篇文章。'
+author: 'Koch'
+---
+
 #### II. 逻辑开端处的直接性与中介
  
 关于逻辑学的开端，黑格尔作出了如下等相关论述：
