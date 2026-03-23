@@ -3,6 +3,7 @@
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "关于我";
 const identity = {
@@ -17,16 +18,8 @@ const animecolor = "navy";
 const tired = true;
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{animecolor}}>
+<BaseLayout pageTitle = {pageTitle}>
+    <style define:vars={{animecolor}}>
           h1 {
           color: purple;
           font-size: 4rem;
@@ -36,15 +29,8 @@ const tired = true;
               font-weight: bold;
           }
         </style>
-	</head>
-	<body>
-        <a href="/">首页</a>
-		<a href="/about/">关于</a>
-        <a href="/test/">测试</a>
-        <h1>{pageTitle}</h1>
-        <h2>这将是第二个网页？！</h2>
-        <Header/>
-        <p>惊人的事实：</p>
+    <h2>关于我</h2>
+    <p>惊人的事实：</p>
         <ul>    
             <li>我的名字是{identity.firstName}</li>
             <li>我现在{identity.character}</li>
@@ -55,7 +41,4 @@ const tired = true;
             <li>我最近在看动漫，里面有如下角色</li>
             <ul>{animegirls.map((animegirl) => <li class="animegirl">{animegirl}</li>)}</ul>
         </ul>
-        <Footer/>
-        <script>import "../scripts/menu.js";</script>
-	</body>
-</html>
+</BaseLayout>
